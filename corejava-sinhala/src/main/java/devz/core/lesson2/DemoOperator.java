@@ -10,6 +10,10 @@ package devz.core.lesson2;
  * @author devzo
  */
 public class DemoOperator {
+    
+    
+    
+    
     public static void main(String[] args) {
         
         //1.Arithmetic Operators 
@@ -36,4 +40,7 @@ public class DemoOperator {
         System.out.println("Y is:"+y);  // 6
         
     }
+    
+    
+    
 }
