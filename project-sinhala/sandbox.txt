@@ -1,0 +1,19 @@
+SMS Student Management System 
+
+
+
+Entity 
+  Attributes 
+
+
+
+Student 
+  id,fname,lname,gender,tp,city
+Teacher 
+  id,first_name,lname,nic,degree,age,tp
+Subject
+  subject_name
+
+User 
+
+

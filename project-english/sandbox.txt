@@ -1,0 +1,16 @@
+SMS - Student Management System 
+
+
+Entity
+Attributes 
+
+
+Student 
+   id,fname,lname,city,tp
+Teacher
+   id,first_name,lname,degree,nic,tp
+Subject
+   subject_name
+
+
+C R U D
