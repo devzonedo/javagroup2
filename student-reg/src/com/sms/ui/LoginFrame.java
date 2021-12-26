@@ -5,7 +5,9 @@
  */
 package com.sms.ui;
 
+import com.sms.bean.UserBean;
 import com.sms.businesslogic.UserLogic;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -134,17 +136,31 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.out.println("click the login button");
-        
+
         String username = txtUsername.getText();
         String password = txtPassword.getText();
-        
+
         System.out.println(username);
         System.out.println(password);
-        
-        
-        
-        new UserLogic().getLogin(username, password);
-        
+
+        UserBean login = new UserLogic().getLogin(username, password);
+        if (login.isFlag()) {
+            // login success
+            if (login.getUser_role().equalsIgnoreCase("ADMIN")) {
+//                AdminHomeFrame adminHome = new AdminHomeFrame();
+
+                AdminHomeFrame adminHome = new AdminHomeFrame(login);
+                adminHome.setLocationRelativeTo(null);
+                adminHome.setVisible(true);
+
+                this.dispose();
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid Username or Password", "SMS", JOptionPane.ERROR_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

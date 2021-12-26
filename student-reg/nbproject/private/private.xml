@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/devzo/OneDrive/Desktop/JAVA/student-reg/src/com/sms/ui/LoginFrame.java</file>
-            <file>file:/C:/Users/devzo/OneDrive/Desktop/JAVA/student-reg/src/com/sms/util/DBConnection.java</file>
-            <file>file:/C:/Users/devzo/OneDrive/Desktop/JAVA/student-reg/src/com/sms/businesslogic/UserLogic.java</file>
+            <file>file:/D:/classes/java-online/javagroup2/student-reg/src/com/sms/businesslogic/UserLogic.java</file>
+            <file>file:/D:/classes/java-online/javagroup2/student-reg/src/com/sms/ui/LoginFrame.java</file>
+            <file>file:/D:/classes/java-online/javagroup2/student-reg/src/com/sms/businesslogic/StudentLogic.java</file>
+            <file>file:/D:/classes/java-online/javagroup2/student-reg/src/com/sms/ui/StudentRegisterFrame.java</file>
+            <file>file:/D:/classes/java-online/javagroup2/student-reg/src/com/sms/ui/AdminHomeFrame.java</file>
+            <file>file:/D:/classes/java-online/javagroup2/student-reg/src/com/sms/bean/UserBean.java</file>
+            <file>file:/D:/classes/java-online/javagroup2/student-reg/src/com/sms/bean/StudentBean.java</file>
         </group>
     </open-files>
 </project-private>
