@@ -24,7 +24,7 @@ public class UserLogic {
 
         try {
             con = new DBConnection().getConnection();
-            String sql = "SELECT * FROM tbl_user WHERE username = ? AND pword = ? AND status_code = 'ACTIVE'";
+            String sql = "SELECT * FROM tbl_user WHERE username = ? AND pword = PASSWORD(?) AND status_code = 'ACTIVE'";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, username);
             ps.setString(2, password);
@@ -47,6 +47,34 @@ public class UserLogic {
             e.printStackTrace();
         }
         return ub;
+    }
+
+    public void setUser(UserBean ub) {
+        Connection con = null;
+        boolean flag = false;
+        try {
+            con = new DBConnection().getConnection();
+            String sql = "INSERT INTO tbl_user\n"
+                    + "            (username,\n"
+                    + "             pword,\n"
+                    + "             user_role,\n"
+                    + "             status_code)\n"
+                    + "VALUES (?,\n"
+                    + "        PASSWORD(?),\n"
+                    + "        ?,\n"
+                    + "        ?)";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, ub.getUsername());
+            ps.setString(2, ub.getUsername());
+            ps.setString(3, ub.getUser_role());
+            ps.setString(4, "ACTIVE");
+
+            ps.executeUpdate();
+            flag = true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

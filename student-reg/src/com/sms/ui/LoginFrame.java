@@ -154,6 +154,11 @@ public class LoginFrame extends javax.swing.JFrame {
                 adminHome.setVisible(true);
 
                 this.dispose();
+            } else if (login.getUser_role().equalsIgnoreCase("STUDENT")) {
+                
+                StudentHomeFrame stuHome = new StudentHomeFrame(login);
+                stuHome.setLocationRelativeTo(this);
+                stuHome.setVisible(true);
             }
 
         } else {

@@ -6,7 +6,9 @@
 package com.sms.ui;
 
 import com.sms.bean.StudentBean;
+import com.sms.bean.UserBean;
 import com.sms.businesslogic.StudentLogic;
+import com.sms.businesslogic.UserLogic;
 import javax.swing.JOptionPane;
 
 /**
@@ -231,10 +233,15 @@ public class StudentRegisterFrame extends javax.swing.JFrame {
         sb.setNic(nic);
         sb.setSubject_name(lname);
 
-        boolean addStudent = new StudentLogic().addStudent(sb);
-        if (addStudent) {
+        int addStudent = new StudentLogic().addStudent(sb);
+        if (addStudent != 0) {
             //success
-            JOptionPane.showMessageDialog(null, "New Student Inserted, new user created ", "Student", JOptionPane.INFORMATION_MESSAGE);
+            //insert into tbl_user table
+            UserBean ub = new UserBean();
+            ub.setUsername(nic);
+            ub.setUser_role("STUDENT");
+            new UserLogic().setUser(ub);
+            JOptionPane.showMessageDialog(null, "New Student Inserted, ID:"+addStudent, "Student", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Record insert error ", "Student", JOptionPane.ERROR_MESSAGE);
 
